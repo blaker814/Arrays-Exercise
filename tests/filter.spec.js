@@ -6,6 +6,7 @@ import {
   getPolyglotStudents,
   getStudentsByInstructorId,
   getStudentsByLanguage,
+  getStudentsByLanguages
 } from "../src/filterExercises";
 
 describe("getStudentsInCohort", () => {
@@ -127,19 +128,19 @@ describe("getStudentsByLanguage", () => {
   });
 });
 
-// describe("getStudentsByLanguages", () => {
-//   test("should get only students who know all given languages", () => {
-//     const langs = ["Javascript", "C#"];
+describe("getStudentsByLanguages", () => {
+  test("should get only students who know all given languages", () => {
+    const langs = ["Javascript", "C#"];
 
-//     // expect
-//     const summer = useStudents()[0];
-//     const michael = useStudents()[3];
+    // expect
+    const summer = useStudents()[0];
+    const michael = useStudents()[3];
 
-//     // actual
-//     const actual = getStudentsByLanguages(langs);
+    // actual
+    const actual = getStudentsByLanguages(langs);
 
-//     expect(actual.length).toBe(2);
-//     expect(actual).toContainEqual(summer);
-//     expect(actual).toContainEqual(michael);
-//   });
-// });
+    expect(actual.length).toBe(2);
+    expect(actual).toContainEqual(summer);
+    expect(actual).toContainEqual(michael);
+  });
+});
